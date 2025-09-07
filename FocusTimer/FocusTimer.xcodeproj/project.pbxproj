@@ -27,7 +27,18 @@
 		911007AB2E6D140C00A0E672 /* FocusTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FocusTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		911007BA2E6D140E00A0E672 /* FocusTimerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FocusTimerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		911007C42E6D140E00A0E672 /* FocusTimerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FocusTimerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		911007E72E6D16E800A0E672 /* TimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		911007E92E6D176C00A0E672 /* Exceptions for "FocusTimerTests" folder in "FocusTimerTests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				TimerViewModelTests.swift,
+			);
+			target = 911007B92E6D140E00A0E672 /* FocusTimerTests */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		911007AD2E6D140C00A0E672 /* FocusTimer */ = {
@@ -37,6 +48,9 @@
 		};
 		911007BD2E6D140E00A0E672 /* FocusTimerTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				911007E92E6D176C00A0E672 /* Exceptions for "FocusTimerTests" folder in "FocusTimerTests" target */,
+			);
 			path = FocusTimerTests;
 			sourceTree = "<group>";
 		};
@@ -75,6 +89,7 @@
 		911007A22E6D140C00A0E672 = {
 			isa = PBXGroup;
 			children = (
+				911007E52E6D16A600A0E672 /* Features */,
 				911007AD2E6D140C00A0E672 /* FocusTimer */,
 				911007BD2E6D140E00A0E672 /* FocusTimerTests */,
 				911007C72E6D140E00A0E672 /* FocusTimerUITests */,
@@ -90,6 +105,22 @@
 				911007C42E6D140E00A0E672 /* FocusTimerUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		911007E52E6D16A600A0E672 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				911007E62E6D16C600A0E672 /* Timer */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		911007E62E6D16C600A0E672 /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				911007E72E6D16E800A0E672 /* TimerViewModel.swift */,
+			);
+			path = Timer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
