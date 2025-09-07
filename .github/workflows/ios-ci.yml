@@ -12,25 +12,33 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Xcode & tools versions
+      - name: Show Xcode & available simulators
         run: |
+          set -e
           xcodebuild -version
-          xcrun simctl list devices | head -n 15
+          xcrun simctl list devices | head -n 40
+
+      - name: List project targets & schemes
+        working-directory: FocusTimer
+        run: |
+          set -e
+          xcodebuild -list -project FocusTimer.xcodeproj
 
       - name: Resolve packages
         working-directory: FocusTimer
         run: |
+          set -e
           xcodebuild -resolvePackageDependencies \
             -project FocusTimer.xcodeproj \
             -scheme FocusTimer
 
-      - name: Build & Test (iPhone 15 sim)
+      - name: Build & Test
         working-directory: FocusTimer
         run: |
-          set -e
+          set -euo pipefail
           xcodebuild \
             -project FocusTimer.xcodeproj \
             -scheme FocusTimer \
-            -destination 'platform=iOS Simulator,name=iPhone 15' \
+            -destination 'platform=iOS Simulator,OS=latest,name=iPhone 15' \
             -enableCodeCoverage YES \
-            clean test | xcpretty || exit ${PIPESTATUS[0]}
+            clean test
